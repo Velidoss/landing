@@ -3,6 +3,11 @@
 // === variables ===
 $color-title: #6e6e6e;
 $color-text: #a1a1a1;
+
+$screen-sm:576px;
+$screen-md:768px;
+$screen-lg:992px;
+$screen-xl:1200px;
 // === variables ===
 
 /* === Mixins === */
@@ -20,10 +25,13 @@ body {
 
 }
 
-.section-outer {}
+.section-outer {
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
 .section-inner {
-    width: 1180px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
