@@ -1,6 +1,7 @@
 @import "normalize.scss";
 
 // === variables ===
+$color-banner: #d4d4d4;
 $color-title: #6e6e6e;
 $color-text: #a1a1a1;
 
@@ -126,7 +127,7 @@ span {
 // ===Header===
 .section-header {
   color: #fff;
-  background: url("../images/business-travel-policy.jpg") no-repeat 50% 50%;
+  background: url("../images/notebook.jpg") no-repeat 50% 50%;
   background-size: cover;
   position: relative;
 
@@ -153,7 +154,7 @@ span {
     font-weight: 600;
     font-size: 38px;
     flex-shrink: 1;
-    color: $color-title;
+    color: $color-banner;
     padding: 9px 6px;
     margin-top: 80px;
   }
@@ -178,16 +179,20 @@ span {
       font-size: 50px;
       font-weight: 600;
       line-height: 60px;
-      color: $color-title;
+      color: $color-banner;
       margin-bottom: 16px;
     }
 
     &__subtitle {
       font-size: 16px;
       font-weight: 400;
-      margin-bottom: 45px;
       margin: 0 auto 30px;
       width: 60%;
+
+      @media (min-width: $screen-md) {
+        padding-bottom: 120px;
+      }
+
     }
 
     &__form {
@@ -217,6 +222,7 @@ span {
           }
         }
       }
+
       @media (min-width: $screen-sm) {
         &-input {
           padding-right: 40px;
@@ -225,9 +231,11 @@ span {
 
       @media (max-width: $screen-xs-max) {
         flex-direction: column;
+
         &-input {
           margin-bottom: 15px;
         }
+
         .button-main {
           width: 100%;
         }
@@ -281,6 +289,7 @@ span {
       margin-bottom: 20px;
     }
   }
+
   @media (min-width: $screen-md) {
     &__content {
       padding-right: 90px;
@@ -297,21 +306,54 @@ span {
 
   .description-item {
     padding: 50px 0;
-    background-color: #ff5c36;
+    background-color: #36b5ff;
+    border-radius: 15px;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__icon {
+      width: 100%;
+
+      svg {
+        color: #000;
+      }
+    }
 
     &__text {
       color: #fff;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    &__button {
+      align-self: flex-end;
+      margin-top: 40px;
     }
   }
-  @media (min-width: $screen-sm) {
-    .description-item + .description-item {
+
+  @media (min-width:$screen-sm) and (max-width: $screen-md-max) {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .description-item {
+      margin-bottom: 20px;
+    }
+
+  }
+
+  @media (min-width: $screen-lg) {
+    .description-item+.description-item {
       margin-left: 30px;
     }
   }
 
   @media (max-width: $screen-xs-max) {
     flex-direction: column;
-    .description-item + .description-item {
+
+    .description-item+.description-item {
       margin-top: 30px;
     }
   }
@@ -356,9 +398,11 @@ span {
     .section-inner {
       flex-direction: column;
     }
+
     &__content {
       order: -1;
     }
+
     &__img {
       img {
         max-width: 90%;
@@ -402,6 +446,7 @@ span {
     font-weight: 400;
     color: $color-text;
     margin-bottom: 80px;
+
   }
 
   &__list {
@@ -411,6 +456,10 @@ span {
     &-item {
       flex-basis: 360px;
       padding: 60px 45px;
+
+      &:hover {
+        background-color: rgb(211, 240, 250);
+      }
 
       &_title {
         font-weight: 600;
@@ -446,14 +495,14 @@ span {
         color: $color-text;
         margin-bottom: 50px;
       }
-      .active {
-        background-color: rgb(211, 240, 250);
-      }
+
+
 
       //   @media (max-width: $screen-xs-max) {
 
       //   }
     }
+
     @media (max-width: $screen-sm-max) {
       flex-direction: column;
     }
@@ -535,18 +584,21 @@ span {
         }
       }
     }
+
     @media (max-width: $screen-xs-max) {
       flex-direction: column;
       text-align: center;
+
       li {
-        & + li {
+        &+li {
           margin-top: 10px;
         }
       }
     }
+
     @media (min-width: $screen-sm) {
       li {
-        & + li {
+        &+li {
           margin-left: 60px;
         }
       }
@@ -563,6 +615,7 @@ span {
       width: 60%;
       margin: 0 auto;
     }
+
     @media (max-width: $screen-sm-max) {
       flex-direction: column;
       text-align: center;
@@ -577,7 +630,7 @@ span {
   list-style: none;
 
   li {
-    & + li {
+    &+li {
       margin-left: 20px;
     }
 
@@ -590,10 +643,12 @@ span {
       text-decoration: none;
     }
   }
+
   @media (max-width: $screen-sm-max) {
     display: inline-flex;
     margin-top: 20px;
   }
+
   @media (min-width: $screen-md) {
     display: flex;
   }
